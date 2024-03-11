@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    
+
+    <title>RegentStudents</title>
+
+</head>
+<body>
+<!--     <div id="loader-wrapper">
+        <div id="loader"></div> -->
+    <header>
+        <div id="divRegistrer">
+            <!-- <button></button> -->
+
+        </div>
+        <img src="./assets/img/logoInstit.png" alt="Logo Instituto">
+        <h1> Horace Green </h1>
+    </header>
+
+    <main>
+        <h2>Lista de estudiantes</h2>
+
+        <section id="listaDeEstudiantes" class="divDeFiltrado">
+            <div class="buscador">
+                <label for="buscadorInput">Buscar Estudiante</label>
+                <input type="text" id="buscadorInput">
+            </div>
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    Filtrar por Estados
+                </a>
+                <div class="addBtnEst">
+                    <button id="btnModalAddEst"><img src="./assests/img/AddEstud.png" alt="Add Estudiante"><span>Estudiante</span></button>
+                </div>
+                
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <li><a id="filtProm" class="dropdown-item" href="#">Promocionados</a></li>
+                    <li><a id="filtAprov" class="dropdown-item" href="#">Aprobados</a></li>
+                    <li><a id="filtDesap" class="dropdown-item" href="#">Desaprobado</a></li>
+                    <li><a id="noFlitro" class="dropdown-item" href="#">Quitar filtros</a></li>
+                </ul>
+            </div>
+
+            <div class="tablaEstudiantes">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Documento</th>
+                            <th scope="col">Apellido y Nombre</th>
+                            <th scope="col">Parcial-1</th>
+                            <th scope="col">Parcial-2</th>
+                            <th scope="col">Parcial-3</th>
+                            <th scope="col">Promedio</th>
+                            <th scope="col">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="compiladorEstudiantes"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <div id="myModal" class="modalContainer">
+            <div class="modalContent">
+                <span class="close">X</span>
+                <h2>Agregar Estudiante</h2>
+                <div class="nuevoEstudiante">
+                    <div class="row g-3">
+                        <div class="col">
+                            <input type="text" id="modalDNI" placeholder="Documento de Identidad">
+                        </div>
+                        <div class="col">
+                            <input type="text" id="modalNombre" placeholder="Apellido y Nombre">
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col">
+                            <input type="number" id="modalParcial1" placeholder="Nota Primer Parcial">
+                        </div>
+                        <div class="col">
+                            <input type="number" id="modalParcial2" placeholder="Nota Segundo Parcial">
+                        </div>
+                        <div class="col">
+                            <input type="number" id="modalParcial3" placeholder="Nota Tercer Parcial">
+                        </div>
+                    </div>
+                </div>
+                <button id="btnAddEst"><span>Cargar nuevo Estudiante</span></button>
+                <p id="textoAlerta" class="textoAlerta">Alguno de los campos no es válido. <br>1- Verifique que el DNI contenga 6 digitos. <br> 2- Que el nombre esté compuesto por lo menos de 3 letras. <br> 3- Que las notas esten comprendidas en el rango de 1 a 10.</p>
+            </div>
+        </div>
+
+
+    </main>
+    
+    <footer>
+        <section>
+            <div class="redesSociales">Redes sociales IMG</div>
+            <div class="ubicacion">Direccion lleca 1234, BS AS</div>
+        </section>
+    </footer>
+    <script type="module" src="./dbJS/estudiantes.js"></script>
+    <script type="module" src="./js/inicio.js"></script>
+    <script type="module" src="./js/planillaEstudiantes.js"></script>
+    <!-- <script type="module" src="./js/usuario.js"></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>    <!-- <script src="./main2.js"></script> -->
+</body>
+</html>
