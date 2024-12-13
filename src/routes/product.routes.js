@@ -2,7 +2,7 @@ import { Router } from 'express'; //Punto de entrada de Router de Express
 import {ProductMgr} from '../daos/fs/productManager.js'
 import { validarNewProduct} from '../middlewares/middlewares.js';
 import { validarPut } from '../middlewares/middlewares.js';
-import { socketServer } from '../../serverExpress.js';
+//import { socketServer } from '../serverExpress.js';
 import * as controller from '../controllers/products.controller.js'
 
 import passport from 'passport';
@@ -10,7 +10,7 @@ import { authorizationRole } from '../middlewares/auth.middleware.js';
 
 const router = Router();
 
-/* ---------------------------- PRODUCT ENDPOINTS --------------------------- */
+/* ---------------------------- PRODUCT ENDPOINTS -------------------------- */
 
 //Devolver todos los Productos
 router.get('/', controller.getProducts)

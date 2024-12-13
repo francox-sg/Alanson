@@ -1,26 +1,27 @@
-import express from 'express'
+import express from 'express';
 import { __dirname } from './utils.js';
 import handlebars from 'express-handlebars'
 import { Server, Socket } from 'socket.io';
-import productRouter from './src/routes/product.routes.js';
-import cartRouter from './src/routes/cart.routes.js';
-import viewsRouter from './src/routes/views-router.js'
-import { ProductMgr } from './src/daos/fs/productManager.js';
-import { initMongoDB } from './src/db/database.js';
+import productRouter from './routes/product.routes.js';
+import cartRouter from './routes/cart.routes.js';
+import viewsRouter from './routes/views-router.js'
+import { ProductMgr } from './daos/fs/productManager.js';
+import { initMongoDB } from './db/database.js';
 //Backend2
-import authRouter from './src/routes/auth.routes.js';
-import userRouter from './src/routes/user.routes.js';
-import mocksRouter from './src/routes/mocks.routes.js';
-import { initializePassport } from './src/config/passport.config.js';
+import authRouter from './routes/auth.routes.js';
+import userRouter from './routes/user.routes.js';
+import mocksRouter from './routes/mocks.routes.js';
+import { initializePassport } from './config/passport.config.js';
 import passport from 'passport';
 import cookieParser from 'cookie-parser';
 //Backend 3
 import swaggerUI from 'swagger-ui-express'
 import swaggerJSDoc from 'swagger-jsdoc'
-import { info } from './src/docs/info.js';
+import { info } from './docs/info.js';
 
 //Conexion con DB Mongo
 initMongoDB()
+
 
 const PORT= 8080;
 
